@@ -6,6 +6,8 @@ services:
       - .:/app
     environment:
       - MODE=cities
+      - UNSPLASH_ACCESS_KEY=14d01887c02d7cbc49665f00439b016a82f4f1bdab3429f630a213a4dcefed6c
+      - UNSPLASH_SECRET_KEY=f3646c8a37eb1fefacf0e58915aa271830f4a986c94f6e9f834c70b7238f9d77
 
     ports:
       - "8080:80"

@@ -9,8 +9,8 @@ from country_codes import country_codes
 from cities_top_600 import cities
 
 
-UNSPLASH_ACCESS_KEY = '14d01887c02d7cbc49665f00439b016a82f4f1bdab3429f630a213a4dcefed6c'
-UNSPLASH_SECRET_KEY = 'f3646c8a37eb1fefacf0e58915aa271830f4a986c94f6e9f834c70b7238f9d77'
+UNSPLASH_ACCESS_KEY = os.environ.get('UNSPLASH_ACCESS_KEY')
+UNSPLASH_SECRET_KEY = os.environ.get('UNSPLASH_SECRET_KEY')
 
 PER_PAGE = random.randint(2, 5)
 BASE_URL = 'https://api.unsplash.com/search/photos?client_id={}&per_page={}'.format(UNSPLASH_ACCESS_KEY, PER_PAGE)
@@ -72,10 +72,10 @@ def get_image_url(keyword, mode='likes'):
         # Get result with most likes
         if select_mode == 'likes':
             likes = 0
-            result_url = ""
+            result_url = None
             for result in results:
-                if result['likes'] > likes:
-                    result_url = result.get('urls', {}).get(IMAGE_MODE)
+                print('eeek')
+                result_url = result.get('urls', {}).get(IMAGE_MODE) if result['likes'] > likes else result_url
         else:
             result_url = results[random.randint(0, len(results) -1)].get('urls', {}).get(IMAGE_MODE)
 
