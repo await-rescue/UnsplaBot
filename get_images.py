@@ -74,7 +74,6 @@ def get_image_url(keyword, mode='likes'):
             likes = 0
             result_url = None
             for result in results:
-                print('eeek')
                 result_url = result.get('urls', {}).get(IMAGE_MODE) if result['likes'] > likes else result_url
         else:
             result_url = results[random.randint(0, len(results) -1)].get('urls', {}).get(IMAGE_MODE)
