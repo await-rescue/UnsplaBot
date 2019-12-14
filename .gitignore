@@ -130,3 +130,5 @@ dmypy.json
 
 # Images
 images/
+
+.DS_Store

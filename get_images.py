@@ -9,11 +9,11 @@ from country_codes import country_codes
 from cities_top_600 import cities
 
 
-ACCESS_KEY = '14d01887c02d7cbc49665f00439b016a82f4f1bdab3429f630a213a4dcefed6c'
-SECRET_KEY = 'f3646c8a37eb1fefacf0e58915aa271830f4a986c94f6e9f834c70b7238f9d77'
+UNSPLASH_ACCESS_KEY = '14d01887c02d7cbc49665f00439b016a82f4f1bdab3429f630a213a4dcefed6c'
+UNSPLASH_SECRET_KEY = 'f3646c8a37eb1fefacf0e58915aa271830f4a986c94f6e9f834c70b7238f9d77'
 
 PER_PAGE = random.randint(2, 5)
-BASE_URL = 'https://api.unsplash.com/search/photos?client_id={}&per_page={}'.format(ACCESS_KEY, PER_PAGE)
+BASE_URL = 'https://api.unsplash.com/search/photos?client_id={}&per_page={}'.format(UNSPLASH_ACCESS_KEY, PER_PAGE)
 
 IMAGE_MODES = ['regular', 'full']
 IMAGE_MODE = IMAGE_MODES[0]
