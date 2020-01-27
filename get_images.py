@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import sys
 import os
 import requests
@@ -53,8 +55,8 @@ def get_image_url(keyword, mode='likes'):
     try:
         response = requests.get(url)
         response.raise_for_status()
-    except requests.HTTPError:
-        print('😡 Request failed for {}'.format(keyword))
+    except requests.HTTPError as e:
+        print('😡 Request failed for {}: {}'.format(keyword, e))
         wait()
         return 
     
