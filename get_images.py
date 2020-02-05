@@ -20,7 +20,7 @@ BASE_URL = 'https://api.unsplash.com/search/photos?client_id={}&per_page={}'.for
 IMAGE_MODES = ['regular', 'full']
 IMAGE_MODE = IMAGE_MODES[0]
 
-MODE = os.environ.get('MODE')
+MODE = os.environ.get('MODE', 'countries')
 
 ORIENTATIONS = ['landscape', 'portrait', 'squarish']
 ORIENTATION = ORIENTATIONS[0]
